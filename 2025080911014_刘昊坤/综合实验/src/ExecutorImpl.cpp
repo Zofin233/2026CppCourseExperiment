@@ -1,0 +1,26 @@
+#include "ExecutorImpl.hpp"
+#include "command/CmderFactory.hpp"
+#include "command/Singleton.hpp"
+
+#include <algorithm>
+
+namespace adas {
+
+ExecutorImpl::ExecutorImpl(const Pose& pose, const VehicleType type) noexcept : poseHandler(pose, type)
+{
+}
+
+void ExecutorImpl::Execute(const std::string& commands) noexcept
+{
+    const auto cmders = Singleton<CmderFactory>::Instance().GetCmders(commands);
+    std::for_each(cmders.begin(), cmders.end(), [this](const Cmder& cmder) noexcept {
+        cmder(poseHandler).DoOperate(poseHandler);
+    });
+}
+
+Pose ExecutorImpl::Query() const noexcept
+{
+    return poseHandler.Query();
+}
+
+}  // namespace adas

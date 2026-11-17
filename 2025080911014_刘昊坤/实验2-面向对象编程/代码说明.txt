@@ -1,0 +1,5 @@
+实验2-面向对象编程
+
+实现内容：在实验1基础上，以 ICommand 抽象接口、继承和多态封装 M/L/R/F 命令；支持加速及取消加速。
+代码结构：include/ 为公开接口；src/ 为 ExecutorImpl 和命令实现；tests/ 包含基本回归与加速测试。
+构建方式：在本目录配置 CMake 后构建并运行 CTest。将课程提供的 googletest 放到 tests/googletest，或通过 CMake 的 GTest 包配置提供 GTest::gtest_main。

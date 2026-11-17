@@ -1,0 +1,5 @@
+实验1-高质量编程基础
+
+实现内容：Executor 初始化与查询、四方向 M/L/R、空指令、批量指令及多次执行。
+代码结构：include/ 为公开接口；src/ 为简单实现；tests/ 为 GoogleTest 测试。
+构建方式：在本目录配置 CMake 后构建并运行 CTest。将课程提供的 googletest 放到 tests/googletest，或通过 CMake 的 GTest 包配置提供 GTest::gtest_main。

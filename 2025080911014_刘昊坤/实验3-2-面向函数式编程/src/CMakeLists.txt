@@ -1,0 +1,8 @@
+file(GLOB_RECURSE ADAS_SOURCES CONFIGURE_DEPENDS "*.cpp")
+add_library(training ${ADAS_SOURCES})
+target_include_directories(training PUBLIC "${CMAKE_SOURCE_DIR}/include" PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+if(MSVC)
+    target_compile_options(training PRIVATE /W4 /WX)
+else()
+    target_compile_options(training PRIVATE -Wall -Wextra -Werror -Wnon-virtual-dtor -Woverloaded-virtual)
+endif()

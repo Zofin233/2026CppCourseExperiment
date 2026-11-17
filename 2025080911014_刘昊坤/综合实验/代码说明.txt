@@ -1,0 +1,7 @@
+综合实验
+
+实现内容：泛型单例指令工厂、原子动作编排、TR 掉头、Normal/Sport/Bus 三种车辆类型，以及 B/F/B+F 状态组合。
+目录结构：include/ 为公开接口；src/core/ 为位置、方向和状态；src/command/ 为动作、指令与工厂；src/ 为执行器；tests/ 为完整回归测试。
+TR 规则：普通为左转-前进-左转，F 或 B+F 为前进-左转-前进-左转，B 不影响 TR，状态在 TR 后保持。
+车辆规则：Sport 基础 M 两格、L/R 先转后移；Bus 基础 M 一格、L/R 先移后转；F 增加逐格移动，B 反转移动与转向。
+构建时将课程 googletest 放到 tests/googletest，或提供 CMake GTest 包。

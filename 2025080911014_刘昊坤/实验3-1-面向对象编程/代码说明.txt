@@ -1,0 +1,5 @@
+实验3-1-面向对象编程
+
+实现内容：抽离 Point、Direction 和 PoseHandler，解除命令与 ExecutorImpl 的循环依赖；使用 STL 容器、智能指针和表驱动分派 M/L/R/F。
+状态抽象：方向按 E/S/W/N 编码，右转索引加一、左转索引减一，位置通过方向向量逐格更新。
+测试：保留基本指令与加速指令回归测试。构建时将课程 googletest 放到 tests/googletest，或提供 CMake GTest 包。
